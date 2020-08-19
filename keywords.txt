@@ -1,0 +1,26 @@
+###################################
+# Syntax Coloring Map For ArduinoDb
+###################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ArduinoDb	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+format	KEYWORD2
+optimize	KEYWORD2
+get	KEYWORD2
+getAll	KEYWORD2
+insert	KEYWORD2
+remove	KEYWORD2
+exists	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
