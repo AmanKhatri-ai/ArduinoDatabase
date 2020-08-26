@@ -221,4 +221,65 @@ else
 ```
 
 
+### Get / Obtain Stored Values
+
+To obtain the values stored in the database use their associated keys by calling `get(String key, String defaultValue)` function.
+
+Pass **key** in string form whose value is to be obtained
+	 **defaultValue** in string form which will be retured in-case key is not found in database.
+
+Returns value associated with key in string form, if key not found return `defaultValue`.
+
+Refer the following example
+
+```C++
+String val = arduinoDb.get("Key1", "Key not found");
+
+Serial.println(val);
+
+// OR / AND
+
+String val = arduinoDbEEPROM.get("Key1", "Key not found");
+
+Serial.println(val);
+```
+
+
+### Checking for Key existence
+
+Use `exists(String key)` to check weather a key exists in database or not.
+
+Pass **key** in string form to check for it's existence.
+
+Returns `true` if key exists
+		`false` if key not exists
+
+Refer the following example
+
+```C++
+if (arduinoDb.exists("key1"))
+{
+	Serial.println("Key exists");
+}
+else
+{
+	Serial.println("Key not exists");
+}
+
+// OR / AND
+
+if (arduinoDbEEPROM.exists("key1"))
+{
+	Serial.println("Key exists");
+}
+else
+{
+	Serial.println("Key not exists");
+}
+```
+
+
 ## Key points
+
+* Max size supported for EEPROM memory is 4096 bytes
+* Max size supported for SPIFFS memory is 10240 bytes
