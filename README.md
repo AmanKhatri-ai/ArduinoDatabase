@@ -167,8 +167,58 @@ else if (result == MEM_FULL)
 {
 	Serial.println("Memory full, please remove some data");
 }
+
+// OR / AND
+
+int result = arduinoDbEEPROM.insert("key1", "value1");
+
+if (result == SUCCESS)
+{
+	Serial.println("Value inserted into database successfully");
+}
+else if (result == FAILURE)
+{
+	Serial.println("Value insertion failed");
+}
+else if (result == MEM_FULL)
+{
+	Serial.println("Memory full, please remove some data");
+}
 ```
 
+
+### Remove Values
+
+To remove key-value pairs from the database use `remove(String key)` function.
+
+Pass **key** in string form as argument when calling `remove`.
+
+Returns `true` if removal successful
+		`false` if removal failed
+
+Refer the following example
+
+```C++
+if (arduinoDb.remove("key1"))
+{
+	Serial.println("Value removed successfully");
+}
+else
+{
+	Serial.println("Value remove failed");
+}
+
+// OR / AND
+
+if (arduinoDbEEPROM.remove("key1"))
+{
+	Serial.println("Value removed successfully");
+}
+else
+{
+	Serial.println("Value remove failed");
+}
+```
 
 
 ## Key points
