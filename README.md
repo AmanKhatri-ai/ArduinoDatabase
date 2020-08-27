@@ -25,6 +25,10 @@ A key-value database implementation for Arduino boards
 
 ## Dependencies
 
+This library required **ESP8266 Core SDK**
+
+For Arduino IDE, ESP8266 Core SDK [installation instructions](https://github.com/esp8266/Arduino#installing-with-boards-manager).
+
 
 
 
