@@ -151,24 +151,14 @@ int8_t SPIFFS_Memory::_optimizeMemory(int spaceRequired, int fileSize, bool forc
 		}
 		else 
 		{
-			// Reading the whole data from the file
-			String currentData = "";
-
-			for (int i = 0 ; i < file.size() ; i++)
-			{
-				currentData = currentData + String((char)file.read());
-			}
-
-			// _print("Previous File Data:- \n" + currentData);
-
 			// Removing un-indexed data that is not required
 			String newData = "";
 			String temp = "";
 			char thisChar;
 
-			for (int i = 0 ; i < currentData.length() ; i++)
+			for (int i = 0 ; i < file.size() ; i++)
 			{
-				thisChar = (char)currentData[i];
+				thisChar = (char)file.read();
 
 				if (thisChar != '\n')
 				{
