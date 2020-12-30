@@ -111,22 +111,14 @@ int8_t EEPROM_Memory::_optimizeMemory(int spaceRequired, int fileSize, bool forc
 			_print("Space not available...performing optimization");
 		}
 
-		// Reading complete data from file
-		String currentData = "";
-
-		for (int i = 0 ; i < fileSize ; i++)
-		{
-			currentData = currentData + String((char)EEPROM.read(i));
-		}
-
 		// Removing un-indexed data that is not required
 		String newData = "";
 		String temp = "";
 		char thisChar;
 
-		for (int i = 0 ; i < currentData.length() ; i++)
+		for (int i = 0 ; i < fileSize ; i++)
 		{
-			thisChar = (char)currentData[i];
+			thisChar = (char)EEPROM.read(i);
 
 			if (thisChar != '\n')
 			{
