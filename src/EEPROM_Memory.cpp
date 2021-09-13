@@ -21,7 +21,7 @@ EEPROM_Memory::EEPROM_Memory(int EEPROMSize)
 
 // ****************** PRIVATE METHODS *************************
 
-void EEPROM_Memory::_print(String msg)
+void EEPROM_Memory::_print(const String& msg)
 {
 #ifdef DEBUG
 	Serial.print("*ArduinoDb[EEPROM]* ");
@@ -32,7 +32,7 @@ void EEPROM_Memory::_print(String msg)
 
 
 
-int EEPROM_Memory::_indexOfKey(String key)
+int EEPROM_Memory::_indexOfKey(const String& key)
 {
 	int fileSize = _getFilesize();
 	int keyIndex = 0;
@@ -85,7 +85,7 @@ int EEPROM_Memory::_indexOfKey(String key)
 
 
 int8_t EEPROM_Memory::_optimizeMemory(int spaceRequired, int fileSize, bool forceOptimize)
-{	
+{
 	_print("Inside Optimize Memory");
 
 	int totalAvailableBytes = _EEPROM_SIZE;
@@ -274,7 +274,7 @@ int8_t EEPROM_Memory::optimize()
 
 
 
-String EEPROM_Memory::get(String key, String defaultValue)
+String EEPROM_Memory::get(const String& key, const String& defaultValue)
 {
 	_print("GET CALLED");
 	
@@ -351,7 +351,7 @@ String EEPROM_Memory::getAll()
 
 
 // TODO: Optimize/defrag memory before inserting data if memory is close to full
-int8_t EEPROM_Memory::insert(String key, String value)
+int8_t EEPROM_Memory::insert(const String& key, const String& value)
 {
 	_print("INSERT CALLED");
 
@@ -408,7 +408,7 @@ int8_t EEPROM_Memory::insert(String key, String value)
 
 
 
-bool EEPROM_Memory::remove(String key)
+bool EEPROM_Memory::remove(const String& key)
 {
 	_print("REMOVE CALLED");
 	
@@ -457,7 +457,7 @@ bool EEPROM_Memory::remove(String key)
 
 
 
-bool EEPROM_Memory::exists(String key)
+bool EEPROM_Memory::exists(const String& key)
 {
 	_print("EXISTS CALLED");
 

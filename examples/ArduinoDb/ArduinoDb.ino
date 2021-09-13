@@ -9,15 +9,15 @@ void setup() {
   Serial.println("Serial ready");
 
   if (arduinoDb.begin()) {
-    Serial.println("Initialization successful");
+    Serial.println("SPIFFS Initialization successful");
   } else {
-    Serial.println("Initialization failed");
+    Serial.println("SPIFFS Initialization failed");
   }
 
   if (arduinoDbEEPROM.begin()) {
-    Serial.println("Initialization successful");
+    Serial.println("EEPROM Initialization successful");
   } else {
-    Serial.println("Initialization failed");
+    Serial.println("EEPROM Initialization failed");
   }
 }
 

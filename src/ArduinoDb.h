@@ -65,7 +65,7 @@ class ArduinoDb {
          * @return value associated with key if found
          * @return defaultValue otherwise
          */
-        String get(String key, String defaultValue);
+        String get(const String& key, const String& defaultValue);
 
         /**
          * This method will return all the stored key value pairs
@@ -81,7 +81,7 @@ class ArduinoDb {
          * @return SUCCESS if value inserted successfully
          * @return FAILURE is value insertion failed
          */
-        int8_t insert(String key, String value);
+        int8_t insert(const String& key, const String& value);
 
         /**
          * This method will remove the key and associated value from db
@@ -89,7 +89,7 @@ class ArduinoDb {
          * @return FAILURE if fails or key not found
          * @return SUCCESS if key removed successfully
          */
-        bool remove(String key);
+        bool remove(const String& key);
 
         /**
          * This method will tell weather the key exists or not in the database
@@ -97,7 +97,7 @@ class ArduinoDb {
          * @return SUCCESS if key found
          * @return FAILURE is key not found
          */
-        bool exists(String key);
+        bool exists(const String& key);
 };
 
 #endif

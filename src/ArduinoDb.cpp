@@ -78,7 +78,7 @@ int8_t ArduinoDb::optimize()
 
 
 
-String ArduinoDb::get(String key, String defaultValue)
+String ArduinoDb::get(const String& key, const String& defaultValue)
 {	
 	if (_mode == 0)
 	{
@@ -109,7 +109,7 @@ String ArduinoDb::getAll()
 
 
 // TODO: Optimize/defrag memory before inserting data if memory is close to full
-int8_t ArduinoDb::insert(String key, String value)
+int8_t ArduinoDb::insert(const String& key, const String& value)
 {
 	if (_mode == 0)
 	{
@@ -124,7 +124,7 @@ int8_t ArduinoDb::insert(String key, String value)
 
 
 
-bool ArduinoDb::remove(String key)
+bool ArduinoDb::remove(const String& key)
 {
 	if (_mode == 0)
 	{
@@ -139,7 +139,7 @@ bool ArduinoDb::remove(String key)
 
 
 
-bool ArduinoDb::exists(String key)
+bool ArduinoDb::exists(const String& key)
 {
 	if (_mode == 0)
 	{

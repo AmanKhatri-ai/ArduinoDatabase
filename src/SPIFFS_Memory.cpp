@@ -21,7 +21,7 @@ SPIFFS_Memory::SPIFFS_Memory()
 
 // ****************** PRIVATE METHODS *************************
 
-void SPIFFS_Memory::_print(String msg)
+void SPIFFS_Memory::_print(const String& msg)
 {
 #ifdef DEBUG
 	Serial.print("*ArduinoDb[SPIFFS]* ");
@@ -32,7 +32,7 @@ void SPIFFS_Memory::_print(String msg)
 
 
 
-int SPIFFS_Memory::_indexOfKey(String key)
+int SPIFFS_Memory::_indexOfKey(const String& key)
 {
 	// Opening and reading the file contents
 	File file = SPIFFS.open(_FILE_NAME, "r");
@@ -271,7 +271,7 @@ int8_t SPIFFS_Memory::optimize()
 
 
 
-String SPIFFS_Memory::get(String key, String defaultValue)
+String SPIFFS_Memory::get(const String& key, const String& defaultValue)
 {
 	if (_isInitiated)
 	{
@@ -372,7 +372,7 @@ String SPIFFS_Memory::getAll()
 
 
 
-int8_t SPIFFS_Memory::insert(String key, String value)
+int8_t SPIFFS_Memory::insert(const String& key, const String& value)
 {
 	_print("INSERT CALLED");
 	
@@ -437,7 +437,7 @@ int8_t SPIFFS_Memory::insert(String key, String value)
 
 
 
-bool SPIFFS_Memory::remove(String key)
+bool SPIFFS_Memory::remove(const String& key)
 {
 	if (_isInitiated)
 	{
@@ -500,7 +500,7 @@ bool SPIFFS_Memory::remove(String key)
 
 
 
-bool SPIFFS_Memory::exists(String key)
+bool SPIFFS_Memory::exists(const String& key)
 {
 	_print("EXISTS CALLED");
 	

@@ -26,7 +26,7 @@ class SPIFFS_Memory
          * This function will just print the message to the Serial if DEBUG is 1
          * @param msg The message to print in Serial
          */
-        void _print(String msg);
+        void _print(const String& msg);
 
         /**
          * This will return the index at which key is available
@@ -34,7 +34,7 @@ class SPIFFS_Memory
          * @return index of key if found
          * @return -1 if key index not found
          */
-        int _indexOfKey(String key);
+        int _indexOfKey(const String& key);
 
          /**
          * This method will perform memory optimization if required by checking the space needed for new data
@@ -86,7 +86,7 @@ class SPIFFS_Memory
          * @return value associated with key if found
          * @return defaultValue otherwise
          */
-        String get(String key, String defaultValue);
+        String get(const String& key, const String& defaultValue);
 
         /**
          * This method will return all the stored key value pairs
@@ -102,7 +102,7 @@ class SPIFFS_Memory
          * @return SUCCESS if value inserted successfully
          * @return FAILURE is value insertion failed
          */
-        int8_t insert(String key, String value);
+        int8_t insert(const String& key, const String& value);
 
         /**
          * This method will remove the key and associated value from db
@@ -110,7 +110,7 @@ class SPIFFS_Memory
          * @return FAILURE if fails or key not found
          * @return SUCCESS if key removed successfully
          */
-        bool remove(String key);
+        bool remove(const String& key);
 
         /**
          * This method will tell weather the key exists or not in the database
@@ -118,7 +118,7 @@ class SPIFFS_Memory
          * @return SUCCESS if key found
          * @return FAILURE is key not found
          */
-        bool exists(String key);
+        bool exists(const String& key);
 };
 
 #endif
